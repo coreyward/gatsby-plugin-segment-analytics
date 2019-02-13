@@ -1,6 +1,6 @@
 {
   "name": "gatsby-plugin-segment-analytics",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "dependencies": {
     "@segment/snippet": "^4.0.1",
     "babel-preset-es2015": "^7.0.0-beta.3"
