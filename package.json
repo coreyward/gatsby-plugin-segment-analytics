@@ -1,0 +1,21 @@
+{
+  "private": true,
+  "name": "gatsby-plugin-segment-analytics",
+  "version": "0.1.0",
+  "dependencies": {
+    "@segment/snippet": "^4.0.1",
+    "babel-preset-es2015": "^7.0.0-beta.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^7.0.0-beta.3",
+    "babel-preset-react": "^7.0.0-beta.3",
+    "react": "^16.8.0"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0"
+  },
+  "scripts": {
+    "build": "babel src --out-dir . --ignore __tests__",
+    "watch": "babel -w src --out-dir . --ignore __tests__"
+  }
+}
