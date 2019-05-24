@@ -47,10 +47,34 @@ hooks. When a page is loaded, and Gatsby's `onRouteUpdate` API is called,
 In development, `window.analytics` is a shim that simply logs calls to the
 console rather than sending noise to Segment.
 
+### Outbound Link Tracking
+
+To make it easy to track clicks on outbound links, this plugin provides an
+`OutboundLink` component similar to the one provided by
+[gatsby-plugin-google-analytics](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-google-analytics#outboundlink-component).
+
+To use it, simply import it and use it like you would the <a> element e.g.
+
+```js
+import React
+import { OutboundLink } from "gatsby-plugin-segment-analytics"
+
+export default () => {
+
+  <div>
+    <OutboundLink
+      href="https://www.gatsbyjs.org/packages/gatsby-plugin-segment-analytics/"
+    >
+      Visit the Segment Analytics plugin page!
+    </OutboundLink>
+  </div>
+}
+```
+
 ## Special Thanks
 
-This plugin was forked from
-[work by Stephen Mathieson](https://github.com/stephenmathieson/gatsby-plugin-segment).
+This plugin was inspired by
+[work from Stephen Mathieson](https://github.com/stephenmathieson/gatsby-plugin-segment).
 
 ## License
 
