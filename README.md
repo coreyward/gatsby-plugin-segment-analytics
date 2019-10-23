@@ -53,7 +53,7 @@ To make it easy to track clicks on outbound links, this plugin provides an
 `OutboundLink` component similar to the one provided by
 [gatsby-plugin-google-analytics](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-google-analytics#outboundlink-component).
 
-To use it, simply import it and use it like you would the <a> element e.g.
+To use it, simply import it and use it like you would the `<a>` element e.g.
 
 ```js
 import React
