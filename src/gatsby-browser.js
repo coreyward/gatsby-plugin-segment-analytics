@@ -12,5 +12,6 @@ const prodHandler = () => {
   window.analytics && window.analytics.page()
 }
 
+// Adding a 50ms delay ensure that the segment route tracking is in sync with the actual Gatsby route (otherwise you can end up in a state where the Segment page tracking reports the previous page on route change).
 exports.onRouteUpdate =
-  process.env.NODE_ENV === "production" ? prodHandler : devHandler
+  setTimeout(() => process.env.NODE_ENV === "production" ? prodHandler : devHandler, 50)
