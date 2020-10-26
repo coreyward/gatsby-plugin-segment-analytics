@@ -5,7 +5,7 @@ function OutboundLink(props) {
   return (
     <a
       {...props}
-      onClick={e => {
+      onClick={(e) => {
         if (typeof props.onClick === `function`) {
           props.onClick(e)
         }
@@ -25,9 +25,11 @@ function OutboundLink(props) {
         }
         if (window.analytics) {
           window.analytics.track(
-            "Click",
+            props.eventName ? props.eventName : "Click",
             {
-              category: `Outbound Link`,
+              category: props.categoryName
+                ? props.categoryName
+                : `Outbound Link`,
               label: props.href,
             },
             null,
@@ -53,6 +55,8 @@ OutboundLink.propTypes = {
   href: PropTypes.string,
   target: PropTypes.string,
   onClick: PropTypes.func,
+  eventName: PropTypes.string,
+  categoryName: PropTypes.string,
 }
 
 export { OutboundLink }
