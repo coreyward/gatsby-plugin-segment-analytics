@@ -5,11 +5,16 @@ const devHandler = ({ location }) => {
   }
 
   // This doesn't mimic the call to page, but it is more informative
-  window.analytics.page("Blog Page", { path: location.pathname })
+  window.analytics.page(
+    process.env.PAGE_EVENT_NAME ? process.env.PAGE_EVENT_NAME : "Page",
+    {
+      path: location.pathname,
+    }
+  )
 }
 
 const prodHandler = () => {
-  window.analytics && window.analytics.page("Blog Page")
+  window.analytics && window.analytics.page(process.env.PAGE_EVENT_NAME)
 }
 
 exports.onRouteUpdate =
