@@ -80,7 +80,8 @@ export default () => {
 You can optionally provide an `eventName` and `categoryName` prop to
 OutboundLink. This will change the segment event name (which is defaulted to
 "Click"), and the category name (which is a property of the segment event),
-respectively.
+respectively. More information on the segment page event can be found
+[here](https://segment.com/docs/connections/spec/page/)
 
 ```js
 <OutboundLink
