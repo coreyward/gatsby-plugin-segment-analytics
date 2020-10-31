@@ -2,4 +2,5 @@ node_modules
 yarn-error.log
 gatsby-browser.js
 gatsby-ssr.js
+index.js
 !src/*.js
