@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-function OutboundLink({ eventName, categoryName, props }) {
+function OutboundLink({ eventName, categoryName, ...props }) {
   return (
     <a
       {...props}
