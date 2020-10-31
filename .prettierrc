@@ -1,4 +1,4 @@
-semi: false
-trailingComma: "es5"
-proseWrap: "always"
-endOfLine: "lf"
+{
+  "proseWrap": "always",
+  "semi": false
+}

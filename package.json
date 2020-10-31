@@ -21,7 +21,7 @@
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "prettier": "^1.16",
+    "prettier": "^2.1.2",
     "react": "^16.8.0"
   },
   "peerDependencies": {
