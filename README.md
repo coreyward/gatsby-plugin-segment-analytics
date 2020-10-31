@@ -31,6 +31,12 @@ module.exports = {
       resolve: "gatsby-plugin-segment-analytics",
       options: {
         writeKey: "YOUR WRITE KEY",
+
+        // Note: if no eventName is provided then the eventName will be set to
+        // "Page" in development mode (viewable from the console) and will be omitted
+        // in production. The properties object will still be automatically populated
+        // by segment's Analytics.js snippet.
+        eventName: "YOUR PAGE EVENT NAME",
       },
     },
   ],
@@ -69,6 +75,22 @@ export default () => {
     </OutboundLink>
   </div>
 }
+```
+
+You can optionally provide an `eventName` and `categoryName` prop to
+OutboundLink. This will change the segment event name (which is defaulted to
+"Click"), and the category name (which is a property of the segment event),
+respectively. More information on the segment page event can be found
+[here](https://segment.com/docs/connections/spec/page/)
+
+```js
+<OutboundLink
+  href="https://www.gatsbyjs.org/packages/gatsby-plugin-segment-analytics/"
+  eventName="Visit External Link"
+  categoryName="Gatsby Resource"
+>
+  Visit the Segment Analytics plugin page!
+</OutboundLink>
 ```
 
 ## Special Thanks
