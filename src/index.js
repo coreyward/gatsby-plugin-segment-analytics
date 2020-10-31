@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-function OutboundLink(props) {
+function OutboundLink({ eventName, categoryName, props }) {
   return (
     <a
       {...props}
@@ -25,12 +25,10 @@ function OutboundLink(props) {
         }
         if (window.analytics) {
           window.analytics.track(
-            props.eventName ? props.eventName : "Click",
+            eventName ? eventName : "Click",
             {
-              category: props.categoryName
-                ? props.categoryName
-                : `Outbound Link`,
-              label: props.href,
+              category: categoryName ? categoryName : `Outbound Link`,
+              label: href,
             },
             null,
             () => {
