@@ -4,10 +4,11 @@ const devHandler = ({ location }, { eventName }) => {
     return
   }
 
+  const args = [{ path: location.pathname }]
+  if (eventName) args.unshift(eventName)
+
   // This doesn't mimic the call to page, but it is more informative
-  window.analytics.page(eventName ? eventName : "Page", {
-    path: location.pathname,
-  })
+  window.analytics.page(...args)
 }
 
 const prodHandler = (_, { eventName }) => {

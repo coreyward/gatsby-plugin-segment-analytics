@@ -32,10 +32,7 @@ module.exports = {
       options: {
         writeKey: "YOUR WRITE KEY",
 
-        // Note: if no eventName is provided then the eventName will be set to
-        // "Page" in development mode (viewable from the console) and will be omitted
-        // in production. The properties object will still be automatically populated
-        // by segment's Analytics.js snippet.
+        // Optional page name to send with page events; not set by default
         eventName: "YOUR PAGE EVENT NAME",
       },
     },
