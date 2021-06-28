@@ -11,8 +11,25 @@ const devHandler = ({ location }, { eventName }) => {
   window.analytics.page(...args)
 }
 
-const prodHandler = (_, { eventName }) => {
-  window.analytics && window.analytics.page(eventName)
+const prodHandler = ({ location, prevLocation }, { eventName }) => {
+  if (!window.analytics) return
+
+  // Delay tracking to give `window` a chance of being updated
+  window.setTimeout(() => {
+    if (window.location.pathname === location.pathname) {
+      // `window` has updated info, proceed with defaults
+      window.analytics.page(eventName)
+    } else {
+      // `window` has not been updated yet; use Gatsby data to track
+      window.analytics.page(eventName, {
+        title: null,
+        path: location.pathname,
+        url: location.href,
+        referrer: prevLocation?.href,
+        search: location.search,
+      })
+    }
+  }, 250)
 }
 
 export const onRouteUpdate =
