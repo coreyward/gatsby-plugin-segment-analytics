@@ -34,5 +34,10 @@
   },
   "resolutions": {
     "chokidar": "^3.4.0"
-  }
+  },
+  "files": [
+    "gatsby-browser.js",
+    "gatsby-ssr.js",
+    "index.js"
+  ]
 }
