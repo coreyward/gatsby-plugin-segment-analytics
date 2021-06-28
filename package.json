@@ -1,7 +1,7 @@
 {
   "name": "gatsby-plugin-segment-analytics",
   "description": "Gatsby plugin that adds Segment's Analytics.js tracking snippet and tracks page views.",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "license": "MIT",
   "keywords": [
     "segment analytics",
