@@ -15,5 +15,5 @@ const prodHandler = (_, { eventName }) => {
   window.analytics && window.analytics.page(eventName)
 }
 
-exports.onRouteUpdate =
+export const onRouteUpdate =
   process.env.NODE_ENV === "production" ? prodHandler : devHandler

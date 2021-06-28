@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { min as createSnippet } from "@segment/snippet"
 
 // analytics.js stub
@@ -24,7 +24,7 @@ const devShim = `
   })()
 `
 
-exports.onRenderBody = ({ setHeadComponents }, options) => {
+export const onRenderBody = ({ setHeadComponents }, options) => {
   const { writeKey } = options
   const trackingSnippet =
     process.env.NODE_ENV === "production"
